@@ -11,7 +11,12 @@
     <div class="product-arrow"></div>
     <div class='product-count'>95</div>
   </div>
- <%= link_to product_path(product) do %> <img src="http://unsplash.it/300/200" alt="kudoz" class="product-image hidden-xs">
+ <%= link_to product_path(product) do %> 
+        <% if product.photo? %>
+            <%= cl_image_tag(product.photo.path, height: 117, width: 175, crop: :fill, class: 'product-image') %>
+          <% else %>
+            <img src="http://unsplash.it/300/200" alt="kudoz" class="product-image">
+          <% end %>
          <div class='product-body'>
             <h3 class="ttext"><%= product.name %></h3>
             <p class="ttext"><%= product.tagline %></p>
