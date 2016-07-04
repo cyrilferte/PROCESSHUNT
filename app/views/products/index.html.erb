@@ -1,3 +1,7 @@
 <% @products.each do |product| %>
-<li> <%= product.name %> </li>
+<li> 
+  <%= link_to product.name, product_path(product) %> 
+  (<%= product.url %>) 
+  <%= link_to "Delete", product_path(product), method: :delete %> 
+</li>
 <% end %>
