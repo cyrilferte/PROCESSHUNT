@@ -1,3 +1,16 @@
 
 <%= render "shared/bannerhome" %>
 <br>
+<div class="container padded">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to "CFD", products_path(category: "CFD"), class: "card-category design" %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to "Process_Simulation", products_path(category: "Process Simulation"), class: "card-category tech" %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to "Design_3D", products_path(category: "CAO 3D"), class: "card-category education" %>
+    </div>
+  </div>
+</div>

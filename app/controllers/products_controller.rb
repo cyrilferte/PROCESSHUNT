@@ -2,9 +2,11 @@ class ProductsController < ApplicationController
 skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-
+      if params[:category]
+      @products = Product.where(category: params[:category])
+      else
       @products = Product.all
-
+      end
   end
 
   def show
@@ -47,7 +49,7 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   private
 
   def product_params
-    params.require(:product).permit(:name, :url)
+    params.require(:product).permit(:name, :url, :tagline, :description, :category)
   end
 
 end
