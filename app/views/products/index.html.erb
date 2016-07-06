@@ -7,11 +7,10 @@
       <h1 class="text-center"> All products </h1>
       <% @products.each do |product| %>
       <div class="product">
-  <div class='product-upvote'>
-    <div class="product-arrow"></div>
-    <div class='product-count'>95</div>
-  </div>
- <%= link_to product_path(product) do %> 
+  <div class="upvote-container" id="product-<%= product.id %>">
+            <%= render 'upvotes/show', product: product %>
+          </div>
+ <%= link_to product_path(product) do %>
         <% if product.photo? %>
             <%= cl_image_tag(product.photo.path, height: 117, width: 175, crop: :fill, class: 'product-image') %>
           <% else %>
@@ -33,7 +32,7 @@
                 <i class="fa fa-pencil"></i>
               <% end %>
             </li>
-            
+
           </ul>
         </div>
       <% end %>

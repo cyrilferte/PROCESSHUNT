@@ -51,5 +51,9 @@ skip_before_action :authenticate_user!, only: [:index, :show]
   def product_params
     params.require(:product).permit(:name, :url, :tagline, :description, :category, :photo)
   end
-
+  def profil
+     
+      @products = Product.where(category: params[:category])
+     
+  end
 end

@@ -95,3 +95,19 @@ color:black;
 .ttext:hover{text-decoration: none;
 color:black;
  }
+a.product-upvote{
+  color: black;
+}
+.product-upvote:hover{
+  color: #5898f1;
+}
+.product-upvoted, a.product-upvote.product-upvoted {
+  color: #5898f1;
+}
+.product-upvoted .product-arrow {
+  border-bottom-color: #5898f1;
+}
+.product:hover {
+  background: #5898f1;
+  cursor: pointer;
+}

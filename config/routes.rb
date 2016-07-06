@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get "/contact" => "pages#join_us"
 
   resources :products
+  resources :upvotes, only: [ :create, :destroy ]
 mount Attachinary::Engine => "/attachinary"
+
   #  get "/products" => "products#index"
 #   get "/products/:id" => "products#show"
  # #create
